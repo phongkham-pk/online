@@ -1,0 +1,89 @@
+// Main Functions
+
+- Item Mangement
+	- Brand / Category / Subcategory / 
+
+- Sell / Shopping
+
+- Order Management
+	- items / customer 
+	- orders / order_detail
+
+- Customer Manage
+	- Reports
+
+
+
+-orders
+	- voucherid,user_id,orderdate,status
+
+-order_details
+	- voucherid,product_id,qty
+
+-brands
+=> 1 | b1 | photo
+=> 2 | b2 | photo
+
+-categories
+=> 1 | fashion | photo
+=> 2 | electronic | photo
+
+
+-subcategories
+=> 1 | baby wear | 1 
+
+
+- os_laravel
+
+Model Relationship
+-----------------
+- one-to-one
+	-hasOne (p)
+	-belongsTo (c)
+
+- one-to-many
+	-hasMany (p)
+	-belongsTo (c)
+
+- many-to-many
+	-belongsToMany
+	-pivot table
+
+
+- Homework (using backend template)
+----------
+	- create route for dashboard page (get)
+	- create master blade (views/backendtemplate.blade.php)
+	- create child blade (views/backend/dashboard.blade.php)
+	- create controller BackendController
+		- create method dashboardfun()
+		- call view (backend.dashboard)
+
+
+Item (CRUD)
+-----------
+create - show form , store data
+retrieve - display data (all , row)
+update - show form with old value , update data
+delete - delete data
+
+
+
+
+
+php artisan key:generate
+
+@role('Customer')
+            <span classs="float-right d-xl-block d-lg-block d-md-block d-none">
+              <a id="navbarDropdown" class="nav-link dropdown-toggle loginLink" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="fale" v-pre>
+                {{Auth::user()->name}}
+              </a>
+              <div class="dropdown-menu" aria-labelleby="navbarDropdown">
+                <a class="dropdown-item" href="{{('logout')}}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout.form').submit();">
+                        {{__('logout')}}        
+                </a>
+                <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
+                  @csrf
+                </form>
